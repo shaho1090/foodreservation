@@ -16,15 +16,15 @@
             <fieldset>
                 <legend>ثبت غذای جدید</legend>
                 <div class="form-group">
-                <label for="name" class="col-lg-2 control-label">نام غذا</label>
+                <label for="title" class="col-lg-2 control-label">نام غذا</label>
                 <div class="col-lg-8">
-                <input type="text" class="form-control" id="title" placeholder="نام غذا را وارد کنید" name="name">
+                <input type="text" class="form-control" id="title" placeholder="نام غذا را وارد کنید" name="title">
                 </div>
                 </div>
                 <div class="form-group">
-                <label for="status" class="col-lg-2 control-label">وضعیت</label>
+                <label for="price" class="col-lg-2 control-label">قیمت</label>
                 <div class="col-lg-8">
-                <input type="text" class="form-control" id="content" name="status">
+                <input type="text" class="form-control" id="price" name="price">
                 </div>
                 </div>
                 <div class="form-group">

@@ -22,6 +22,7 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/addfood', 'FoodListController@add');
+Route::get('/addfood', 'FoodsController@add');
+Route::post('/addfood', 'FoodsController@store');
 
 

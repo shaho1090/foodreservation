@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateWeekScheduleTable extends Migration
+class CreateWeekschedulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateWeekScheduleTable extends Migration
      */
     public function up()
     {
-        Schema::create('WeekSchedule', function (Blueprint $table) {
+        Schema::create('week_schedules', function (Blueprint $table) {
             $table->bigIncrements('id');
 			$table->Date('day');
 			$table->bigInteger('food_id');
@@ -21,7 +21,7 @@ class CreateWeekScheduleTable extends Migration
             $table->timestamps();
 			
 			$table->foreign('food_id')
-			    ->references('id')->on('foodlist')
+			    ->references('id')->on('foods')
 				->onUpdate('cascade')
 				->onDelete('cascade');
 				
@@ -39,6 +39,6 @@ class CreateWeekScheduleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('WeekSchedule');
+        Schema::dropIfExists('week_schedules');
     }
 }
