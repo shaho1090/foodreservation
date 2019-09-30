@@ -17,6 +17,8 @@ class CreateFoodsTable extends Migration
             $table->bigIncrements('id');
 			$table->string('title');
 			$table->integer('price');
+			$table->string('slug')->nullable();
+            $table->integer('user_id')->default(1);
 			$table->tinyInteger('status')->default(0);
             $table->timestamps();
         });

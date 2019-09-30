@@ -24,5 +24,6 @@ Route::get('/about', function () {
 
 Route::get('/addfood', 'FoodsController@add');
 Route::post('/addfood', 'FoodsController@store');
-
+Route::get('/foods', 'FoodsController@index');
+Route::get('/food/{slug?}', 'FoodsController@show');
 
