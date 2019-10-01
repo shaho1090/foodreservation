@@ -24,6 +24,10 @@ Route::get('/about', function () {
 
 Route::get('/addfood', 'FoodsController@add');
 Route::post('/addfood', 'FoodsController@store');
-Route::get('/foods', 'FoodsController@index');
-Route::get('/food/{slug?}', 'FoodsController@show');
 
+Route::get('/foods', 'FoodsController@index');
+
+Route::get('/food/{slug?}', 'FoodsController@show');
+Route::get('/food/edit/{slug?}','FoodsController@edit');
+Route::post('/food/edit/{slug?}','FoodsController@update');
+Route::post('/food/destroy/{slug?}','FoodsController@destroy');

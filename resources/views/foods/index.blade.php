@@ -12,7 +12,7 @@
                 <table class="table">
                     <thead>
                     <tr>
-                        <th>ردیف</th>
+                        <th>ID</th>
                         <th>عنوان</th>
                         <th>وضعیت</th>
                     </tr>
@@ -32,10 +32,4 @@
             @endif
         </div>
     </div>
-<?php
-     echo 'status = '.$food->status;
-     echo '<br>';
-     echo 'ID = ';
-     var_dump($food->id);
-?>
 @endsection

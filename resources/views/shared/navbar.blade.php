@@ -16,10 +16,10 @@
 <li class="active"><a href="/home">صفحه اصلی <span class="sr-only">(current)</span></a></li>
 <li><a href="/addfood">اضافه کردن غذای جدید به لیست</a></li>
 <li class="dropdown">
-<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">منوی غذا<span class="caret"></span></a>
 <ul class="dropdown-menu" role="menu">
-<li><a href="#">Action</a></li>
-<li><a href="#">Another action</a></li>
+<li><a href="/foods">لیست غذاهای موجود</a></li>
+<li><a href="/addfood">اضافه کردن غذا به منو</a></li>
 <li><a href="#">Something else here</a></li>
 <li class="divider"></li>
 <li><a href="#">Separated link</a></li>

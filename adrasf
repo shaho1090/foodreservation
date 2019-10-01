@@ -1,0 +1,29 @@
+[33mcommit 8c9d29e8fcf6cf0d6a1e54b2dfaa901f93e640ea[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: shaho parvini <shaho.parvini@gmail.com>
+Date:   Mon Sep 30 22:49:03 2019 +0330
+
+    finally I could set and get data from food database via my laravel app
+
+[33mcommit a42fd68e679bc21819257d1f9d7d7af05b57d25e[m
+Author: shaho parvini <shaho.parvini@gmail.com>
+Date:   Mon Sep 30 20:25:09 2019 +0330
+
+    changing some files because in laravel, table name must wether a single word or separated with  _ (underscore)
+
+[33mcommit ab92914f6185e962618b9a684cbf037cd7b4733a[m
+Author: shaho parvini <shaho.parvini@gmail.com>
+Date:   Mon Sep 30 18:12:12 2019 +0330
+
+    install laravelcollective/html with composer require and update app.php with form html collective according to menual.
+
+[33mcommit 523aa3105f9bf9d0172b9fbe5afb576ee9471f0a[m
+Author: shaho parvini <shaho.parvini@gmail.com>
+Date:   Mon Sep 30 16:32:44 2019 +0330
+
+    create foodlistcontroller and add.blade.php and add function named add to foodlist controller and config rout proportionate.
+
+[33mcommit e288f9bbf8827029266b1f0cbc53c1eeba0033ad[m
+Author: shaho parvini <shaho.parvini@gmail.com>
+Date:   Mon Sep 30 14:55:30 2019 +0330
+
+    we create a project and database and model. we are just on start way!
