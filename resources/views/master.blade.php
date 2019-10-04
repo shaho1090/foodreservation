@@ -15,9 +15,11 @@
 
 
 
+
 </head>
 <body>
 @include('shared.navbar')
+@include('shared.sidebar')
 @yield('content')
 </body>
 </html>

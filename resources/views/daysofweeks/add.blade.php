@@ -1,5 +1,5 @@
 @extends('master')
-@section('title', 'Add New Food')
+@section('title', 'Add')
 @section('content')
 <div class="container col-md-8 col-md-offset-2">
     <div class="well well bs-component">
@@ -14,15 +14,15 @@
             @endif
             <input type="hidden" name="_token" value="{!! csrf_token() !!}">
             <fieldset>
-                <legend>اضافه کردن غذای جدید به لیست</legend>
+                <legend>ایجاد برنامه هفتگی جدید</legend>
                 <div class="form-group">
-                <label for="title" class="col-lg-2 control-label">نام غذا</label>
+                <label for="title" class="col-lg-2 control-label">عنوان هفته</label>
                 <div class="col-lg-8">
-                <input type="text" class="form-control" id="title" placeholder="نام غذا را وارد کنید" name="title">
+                <input type="text" class="form-control" id="title" placeholder="عنوان هفته را وارد کنید" name="title">
                 </div>
                 </div>
                 <div class="form-group">
-                <label for="price" class="col-lg-2 control-label">قیمت</label>
+                <label for="status" class="col-lg-2 control-label">وضعیت</label>
                 <div class="col-lg-8">
                 <input type="text" class="form-control" id="price" name="price">
                 </div>
