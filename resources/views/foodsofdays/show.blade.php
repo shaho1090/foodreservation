@@ -19,7 +19,7 @@
                 {{ session('status') }}
                 </div>
             @endif
-          <div >
+           <div>
             <form method="post" action="/foodsofdays/add"> 
             <input type="hidden" name="_token" value="{!! csrf_token() !!}">
             <div style="width: 220px; float:right; height:250px; margin:5px; background:lightgray;">
@@ -32,7 +32,7 @@
                             </option>
                         @endforeach
                     </select><p><input type="hidden" value="{!! $id !!}" name="day_id"></p>
-                    <button  type="submit" class="btn btn-default btn-block" >اضافه کردن</button>
+                    <button  type="submit" class="btn btn-default btn-block" name="addfood" >اضافه کردن</button>
                 </div>
             </div>
             </form>
@@ -40,8 +40,8 @@
                 <div style="padding-top:80px; padding-left:5px; padding-right:5px;">
                     
                 </div>
-            </div>
-            <form method="post" action="/foodsofdays/destroy"> 
+              </div>
+            <form method="post" action="/foodsofdays/destroy">  
               <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                 <div style="width: 220px; float:right; height:250px; margin:5px; background:lightgray;">
                   <div style="padding:20px;">
@@ -55,11 +55,11 @@
                             @endforeach 
                         @endif
                     </select><p><input type="hidden" value="{!! $id !!}" name="day_id"></p>
-                   <button  type="submit" class="btn btn-default btn-block">حذف کردن</button>
+                   <button  type="submit" class="btn btn-default btn-block" name="delfood">حذف کردن</button>
                  </div>
               </div>  
             </form>  
-           </div>
+            </div>
             <div class="clearfix"></div>
           </div>
         </div>

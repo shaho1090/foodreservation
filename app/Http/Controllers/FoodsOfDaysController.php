@@ -18,7 +18,6 @@ class FoodsOfDaysController extends Controller
 {
    public function add(FoodsOfDayFormRequest $request)
     { 
-        
         $day_id = $request->get('day_id');
         $foodsofday = new FoodsOfDay(array(
             'day_id' =>  $day_id ,
@@ -46,9 +45,10 @@ class FoodsOfDaysController extends Controller
     }
     public function destroy(FoodsOfDayFormRequest $request)
     {
+        
         $day_id = $request->day_id; 
-        $id = $request->for_destroy_id;
-        DB::table('foods_of_days')->where('id', $id)->delete();
+        $food_id = $request->for_destroy_id;
+        DB::table('foods_of_days')->where('day_id',$day_id)->where('food_id', $food_id)->delete();
         return redirect(action('FoodsOfDaysController@show',$day_id))->with('status', 'نام غذای مورد نظر از لیست این روز حذف شده است');
     }
 }

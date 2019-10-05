@@ -62,8 +62,8 @@ Route::get('/daysofweeks/{id?}', 'DaysOfWeeksController@show');
 |---------working on Foods Of Days---------------
 */
 Route::get('/foodsofdays/show/{id?}', 'FoodsOfDaysController@show');
-Route::post('/foodsofdays/add', 'FoodsOfDaysController@add');
-Route::post('/foodsofdays/destroy', 'FoodsOfDaysController@destroy');
+Route::post('/foodsofdays/add', 'FoodsOfDaysController@add')->name('addfood');
+Route::post('/foodsofdays/destroy', 'FoodsOfDaysController@destroy')->name('delfood');
 
 
 
