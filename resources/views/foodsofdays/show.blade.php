@@ -47,11 +47,13 @@
                   <div style="padding:20px;">
                     <p>لیست غذاهای رزرو شده برای امروز</p>
                     <select  id="target" class="form-control" size="7" name="for_destroy_id" >
-                       @foreach($selectedfoods as $key=>$selectedfood)
-                            <option value="{!! $key !!}">
-                             {!! $selectedfood !!} 
-                            </option>
-                        @endforeach 
+                        @if ($selectedfoods)
+                            @foreach($selectedfoods as $key=>$selectedfood)
+                                <option value="{!! $key !!}">
+                                {!! $selectedfood !!} 
+                                </option>
+                            @endforeach 
+                        @endif
                     </select><p><input type="hidden" value="{!! $id !!}" name="day_id"></p>
                    <button  type="submit" class="btn btn-default btn-block">حذف کردن</button>
                  </div>

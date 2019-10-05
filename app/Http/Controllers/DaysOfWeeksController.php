@@ -15,7 +15,7 @@ class DaysOfWeeksController extends Controller
     public function create($id)
     { 
 	if(DB::table('days_of_weeks')->where('week_id',$id)->first()){
-	    return $this->index();
+	    return $this->index($id);
         }	
         $dayCounter = 1; 
         $date = date(DB::table('weeks')->where('id',$id)->pluck('first_day_date')->first());
@@ -46,9 +46,9 @@ class DaysOfWeeksController extends Controller
 	$week = DB::table('days_of_weeks')->where('id',$id)->first();
         return view('daysofweeks.show', ['daysofweeks' => $daysofweeks]);
     }
-    public function index()
+    public function index($id)
     {
-        $daysofweeks = DB::table('days_of_weeks')->orderBy('id', 'asc')->get();
-	return view('daysofweeks.index', ['daysofweeks' => $daysofweeks]);
+        $daysofweeks = DB::table('days_of_weeks')->where('week_id',$id)->orderBy('id', 'asc')->get();
+        return view('daysofweeks.index', ['daysofweeks' => $daysofweeks]);
     }
 }

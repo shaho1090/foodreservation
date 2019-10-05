@@ -56,7 +56,7 @@ Route::post('/week/destroy/{id?}','WeeksController@destroy');
 |---------working on Day of Weeks---------------
 */
 Route::get('/createday/{id?}', 'DaysOfWeeksController@create');
-Route::get('/daysofweeks', 'DaysOfWeeksController@index');
+Route::get('/daysofweeks/{id?}', 'DaysOfWeeksController@index');
 Route::get('/daysofweeks/{id?}', 'DaysOfWeeksController@show');
 /*
 |---------working on Foods Of Days---------------
