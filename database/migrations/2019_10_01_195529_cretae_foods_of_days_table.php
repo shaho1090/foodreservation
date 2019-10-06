@@ -14,16 +14,18 @@ class CretaeFoodsOfDaysTable extends Migration
     public function up()
     {
         Schema::create('foods_of_days', function (Blueprint $table) {
-			$table->biginteger('day_id');
-			$table->biginteger('food_id');
-		    $table->bigIncrements('id');
-            $table->timestamps();
-			$table->foreign('day_id')
-                              ->references('id')->on('days_of_weeks')
-                              ->onDelete('cascade');
-			$table->foreign('food_id')
-                              ->references('id')->on('foods_of_days')
-                              ->onDelete('cascade');	  
+	$table->biginteger('day_id')->unsigned();
+        $table->biginteger('food_id')->unsigned();
+	$table->bigIncrements('id');
+        $table->timestamps();
+	$table->foreign('day_id')
+              ->references('id')->on('days_of_weeks')
+              ->onUpdate('cascade')
+              ->onDelete('cascade');
+	$table->foreign('food_id')
+              ->references('id')->on('foods')
+	      ->onUpdate('cascade')
+              ->onDelete('cascade');	  
         });
 		
     }

@@ -6,6 +6,9 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class FoodsOfDayFormRequest extends FormRequest
 {
+    private $for_destroy_id;
+    private $day_id;
+
     /**
      * Determine if the user is authorized to make this request.
      *

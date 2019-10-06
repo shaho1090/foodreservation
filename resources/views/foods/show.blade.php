@@ -8,8 +8,8 @@
                 <p> <strong>وضعیت</strong>: {!! $food->status ? 'فعال': 'غیرفعال' !!}</p>
                 <p> {!! $food->price !!} </p>
             </div>
-            <a href="{!! action('FoodsController@edit',$food->slug) !!}" class="btn btn-info">ویرایش</a>
-            <form method="post" action="{!! action('FoodsController@destroy', $food->slug) !!}" class="pull-left">
+            <a href="{!! action('FoodsController@edit',$food->id) !!}" class="btn btn-info">ویرایش</a>
+            <form method="post" action="{!! action('FoodsController@destroy', $food->id) !!}" class="pull-left">
                 <input type="hidden" name="_token" value="{!! csrf_token() !!}">
                 <div class="form-group">
                     <div>

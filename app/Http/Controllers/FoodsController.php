@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Food;
+use App\FoodsOfDay;
 use Illuminate\Http\Request;
 use App\Http\Requests\FoodFormRequest;
 use Illuminate\Support\Facades\DB;
+
 
 class FoodsController extends Controller
 {
@@ -15,14 +17,13 @@ class FoodsController extends Controller
     }
     public function store(FoodFormRequest $request)
     {
-       $slug = uniqid();
+
        $food = new Food(array(
             'title' => $request->get('title'),
             'price' => $request->get('price'),
-            'slug' => $slug
-            ));
+              ));
        $food->save();
-       return redirect('/addfood')->with('status', 'نام غذای مورد نظر به لیست غذاها اضافه شد!');
+       return redirect('/addfood')->with('status', 'نام غذای مورد نظر به لیست اضافه شد!');
     }
 
     public function index()
@@ -30,37 +31,43 @@ class FoodsController extends Controller
         $foods = DB::table('foods')->get();
         return view('foods.index', ['foods' => $foods]);
     }
-    
-    public function show($slug)
+
+    public function show($id)
     {
-        $food = DB::table('foods')->where('slug',$slug)->first();
+        $food = DB::table('foods')->where('id',$id)->first();
         return view('foods.show', compact('food'));
     }
-	
-    public function edit($slug)
+
+    public function edit($id)
     {
-	$food = DB::table('foods')->where('slug',$slug)->first();
+	$food = DB::table('foods')->where('id',$id)->first();
         return view('foods.edit', compact('food'));
     }
-	
-    public function update($slug, FoodFormRequest $request)
+
+    public function update($id, FoodFormRequest $request)
     {
-        $food = DB::table('foods')->where('slug',$slug)->first();
+        $food = DB::table('foods')->where('id',$id)->first();
         if($request->get('status') != null) {
             $foodStatus = 1;
         } else {
             $foodStatus = 0;
         }
-	DB::table('foods')->where('slug', $slug)->update(['title' => $request->get('title'),
-		                                          'price' => $request->get('price'),
-		                                          'status' =>$foodStatus]);
-    		
-        return redirect(action('FoodsController@edit', $food->slug))->with('status', 'عملیات با موفقیت انجام شد!');
+	DB::table('foods')->where('id', $id)->update(['title' => $request->get('title'),
+		                                      'price' => $request->get('price'),
+		                                      'status' =>$foodStatus]);
+
+        return redirect(action('FoodsController@edit', $food->id))->with('status', 'عملیات ویرایش با موفقیت انجام شد');
     }
-	
-    public function destroy($slug)
+
+    public function destroy($id)
     {
-        DB::table('foods')->where('slug', $slug)->delete();
-        return redirect('/foods')->with('status', 'نام غذای مورد نظر از لیست غذاها حذف شد');
+       // dd($test);
+       // DB::table('foods')->where('id', $id)->delete();
+       // DB::table('foods_of_day')
+       $food = Food::find($id);
+       //dd($food);
+       $food->destroy($id);
+       
+       return redirect('/foods')->with('status', 'نام غذای مورد نظر از لیست حذف شد!');
     }
 }

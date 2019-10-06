@@ -15,6 +15,8 @@
 */
 
 
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -37,10 +39,10 @@ Route::get('/about', function () {
 Route::get('/addfood', 'FoodsController@add');
 Route::post('/addfood', 'FoodsController@store');
 Route::get('/foods', 'FoodsController@index');
-Route::get('/food/{slug?}', 'FoodsController@show');
-Route::get('/food/edit/{slug?}','FoodsController@edit');
-Route::post('/food/edit/{slug?}','FoodsController@update');
-Route::post('/food/destroy/{slug?}','FoodsController@destroy');
+Route::get('/food/{id?}', 'FoodsController@show');
+Route::get('/food/edit/{id?}','FoodsController@edit');
+Route::post('/food/edit/{id?}','FoodsController@update');
+Route::post('/food/destroy/{id?}','FoodsController@destroy');
 
 /*
 |---------working on weeks---------------

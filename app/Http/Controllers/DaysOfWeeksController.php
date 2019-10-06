@@ -13,8 +13,9 @@ use App\CustomClass\IraniDays;
 class DaysOfWeeksController extends Controller
 {
     public function create($id)
-    { 
-	if(DB::table('days_of_weeks')->where('week_id',$id)->first()){
+    {   
+        $week_id = DB::table('days_of_weeks')->where('week_id',$id)->first();
+        if($week_id){
 	    return $this->index($id);
         }	
         $dayCounter = 1; 
@@ -38,7 +39,7 @@ class DaysOfWeeksController extends Controller
 	$day = null;
 	$dayCounter = null;
 		
-        return view('daysofweeks.index', ['daysofweeks' => $DaysOfWeek]);
+         return $this->index($id);
     }
 	
     public function show($id)

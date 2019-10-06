@@ -22,7 +22,7 @@
                         <tr>
                             <td>{!! $food->id !!}</td>
                             <td>
-                                <a href="{!! action('FoodsController@show', $food->slug) !!}">{!! $food->title !!} </a>
+                                <a href="{!! action('FoodsController@show', $food->id) !!}">{!! $food->title !!} </a>
                             </td>
                             <td>{!! $food->status ? 'فعال' : 'غیرفعال' !!}</td>
                         </tr>
