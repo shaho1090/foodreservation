@@ -24,14 +24,12 @@ Route::get('/', function () {
     return view('home');
 });
 
-
-/*Route::get('/home', function () {
-    return view('home');
-});*/
 Route::get('/about', function () {
     return view('about');
 });
 
+//Route::get('users/register', 'Auth\RegisterController@create');
+//Route::post('users/register', 'Auth\AuthController@postRegister');
 
 /*
 |---------working on foods---------------
